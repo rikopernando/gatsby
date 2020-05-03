@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 
 const Post = ({ data, pageContext }) => {
   const { html, frontmatter } = data.markdownRemark
-  console.log(pageContext)
   const { prev, next } = pageContext
   return (
     <Layout>
