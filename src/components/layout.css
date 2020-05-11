@@ -7,6 +7,26 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --primary-color: #381696;
+  --primary-text-color: #fff;
+  --featured-bg: #493b8a;
+  --featured-text: #fff;
+  --secondary-color: #10072b;
+  --background: #fff;
+  --site-header: var(--background);
+  --card-bg: #fff;
+  --card-bdr: #eee;
+  --card-shadow: #d5d5d5;
+  --btn-bg: var(--background);
+  --btn-bdr: #d3d6e7;
+  --btn-text-color: #868892;
+  --btn-hover-bg: var(--btn-bdr);
+  --btn-hover-text-color: #00062b;
+  --contact-bg: #f7f8fe;
+  --contact-bdr: #d3d6e7;
+  --input-bg: var(--background);
 }
 article,
 aside,
@@ -188,9 +208,13 @@ html {
   font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 * {
   box-sizing: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 *:before {
   box-sizing: inherit;
@@ -434,14 +458,21 @@ fieldset {
   margin-bottom: 1.45rem;
 }
 blockquote {
-  margin-left: 1.45rem;
-  margin-right: 1.45rem;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  background: #fbfbfb;
+  border-left: 5px solid #0a041a;
+  margin: 1.5em 0px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 20px;
+}
+
+blockquote p {
+  font-style: italic;
+  display: inline;
 }
 form {
   margin-left: 0;
@@ -495,6 +526,11 @@ address {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+}
+footer {
+  text-align: center;
+  margin: 90px 0 16px;
+  color: #666;
 }
 b {
   font-weight: bold;
@@ -619,4 +655,229 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.grids {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 32px;
+  margin-top: 32px;
+}
+.two-grids {
+  display: grid;
+  grid-gap: 32px;
+  &.-contact {
+    .post-thumbnail {
+      min-height: 240px !important;
+    }
+  }
+}
+
+.post {
+  padding: 0;
+  background: var(--background);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.post > .blog-post-content {
+  max-width: 768px;
+  margin: 0 auto;
+}
+.post > .blog-post-content *:last-child,
+> *:last-child {
+  margin-bottom: 0;
+}
+.post > .post-title {
+  text-align: center;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+  font-size: 2rem;
+}
+.post > .post-meta {
+  margin-bottom: 32px;
+  text-align: center;
+}
+.post-thumbnail {
+  text-align: center;
+  min-height: 380px;
+  /*background-image: url('/assets/circles-light.png');*/
+  background-color: var(--featured-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  margin-bottom: 36px;
+  color: var(--featured-text);
+  display: grid;
+  align-content: center;
+  position: relative;
+  padding: 18px;
+  overflow: hidden;
+}
+.post-thumbnail:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.post-thumbnail > * {
+  position: relative;
+  z-index: 2;
+}
+.post-thumbnail > .post-meta {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0;
+}
+
+.card {
+  display: grid;
+  background-color: var(--card-bg);
+  border-radius: 9px;
+  border: 1px solid var(--card-bdr);
+  box-shadow: 0 0 30px var(--card-shadow);
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.card:hover > .post-link {
+  color: var(--primary-color);
+}
+
+.card > a img {
+  display: block;
+  margin-bottom: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.card > header {
+  padding: 24px;
+}
+
+.card > h2:first-child {
+  margin: 0 0 0.5rem 0;
+}
+
+.card .post-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+.card .post-meta {
+  font-weight: 100;
+  margin-bottom: 0;
+}
+.card .post-link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-width: 768px) {
+  .grids {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .grids {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .two-grids {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 64px;
+  }
+}
+
+.gatsby-highlight-code-line {
+  background-color: #feb;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
+}
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+  background-color: #fdf6e3;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+/**
+ * Remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ * 3. Adjust the position of the line numbers
+ */
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+}
+
+/**
+ * If you already use line highlighting
+ */
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.8em;
+}
+
+/**
+ * If you only want to use line numbering
+ */
+
+.gatsby-highlight {
+  background-color: #fdf6e3;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: initial;
+}
+
+.command-line-prompt > span:before {
+  color: #999;
+  content: " ";
+  display: block;
+  padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user="root"]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
 }

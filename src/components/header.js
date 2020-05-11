@@ -1,32 +1,55 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core"
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
+    css={css`
+      background: #0a041a;
+      margin-bottom: 1.45rem;
+    `}
   >
     <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+      css={css`
+        margin: 0 auto;
+        max-width: 960px;
+        padding: 8px;
+      `}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <ul
+        css={css`
+          list-style: none;
+          display: flex;
+          margin: 0;
+
+          li {
+            margin: 0;
+          }
+
+          li a {
+            display: block;
+            padding: 12px;
+            color: #fff;
+            text-decoration: none;
+
+            &:hover {
+              border-bottom: 1px solid #fff;
+              transition: border-bottom ease 0.3s;
+            }
+          }
+        `}
+      >
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/">About</Link>
+        </li>
+        <li>
+          <Link to="/">Portfolio</Link>
+        </li>
+      </ul>
     </div>
   </header>
 )
