@@ -38,9 +38,9 @@ const Post = ({ data, pageContext }) => {
           />
         </article>
       </div>
-      <br />
+      {/* <br />
       {prev && <Link to={prev.path}>Prev</Link>} |<Link to={"/"}>Home</Link> |
-      {next && <Link to={next.path}>Next</Link>}
+      {next && <Link to={next.path}>Next</Link>} */}
     </Layout>
   )
 }

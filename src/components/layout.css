@@ -797,7 +797,7 @@ pre tt:after {
 }
 
 .gatsby-highlight-code-line {
-  background-color: #feb;
+  background-color: #2d2d2d;
   display: block;
   margin-right: -1em;
   margin-left: -1em;
@@ -811,7 +811,7 @@ pre tt:after {
  * and overflow that we removed from <pre>.
  */
 .gatsby-highlight {
-  background-color: #fdf6e3;
+  background-color: #2d2d2d;
   border-radius: 0.3em;
   margin: 0.5em 0;
   padding: 1em;
@@ -848,7 +848,7 @@ pre tt:after {
  */
 
 .gatsby-highlight {
-  background-color: #fdf6e3;
+  background-color: #2d2d2d;
   border-radius: 0.3em;
   margin: 0.5em 0;
   padding: 1em;
